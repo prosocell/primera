@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}Comunicados Docentes{% endblock %}
+
+{% block background %}{% load static %}{% static 'img/portfolio-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<br><br><br>
+    
+              {% if request.user.turno == 'Ma' %}
+                {% include 'navbar-alu.html' %} 
+              {% elif request.user.turno == 'Ve' %} 
+                {% include 'navbar-alu.html' %} 
+              {% elif request.user.turno == 'Mi' %}
+                {% include 'navbar-doc.html' %}
+              {% elif request.user.turno == 'Di' %}
+                {% include 'nav-bar-dir.html' %}
+              {% elif request.user.turno =='Pa' %}
+                {% include 'navbar-doc-extra' %}
+              {% else %}
+                {% include 'nav-bar-ad.html' %}
+              {% endif %} 
+    
+{% endblock %}             
+{% block content %}
+{% if obj %}
+    <div class="row project" >
+        <div class="col-lg-7 col-md-8">
+          <table class="table table-bordered" >
+            <thead>
+              <tr>            
+                <th>Grado</th>
+                <th>Grupo</th>
+                <th>Capacitacion</th>
+                <th>Periodo</th>
+                <th>Asignatura</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miercoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+                <th>aula</th>
+                <th>Docente</th>
+              </tr>       
+            </thead>
+            </tbody>
+          </table>
+          {% for n in obj %}
+          <table class="table table-bordered" >
+            <thead>
+              <tr>            
+                
+              </tr>       
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{n.grado}}</td>
+                <td>{{n.grupo}}</td>
+                <td>{{n.capacitacion}}</td>
+                <td>{{n.periodolec}}</td>
+                <td>{{n.asignatura}}</td>
+                <td>{{n.lunes}}</td>
+                <td>{{n.martes}}</td>
+                <td>{{n.miercoles}}</td>
+                <td>{{n.jueves}}</td>
+                <td>{{n.vierne}}</td>
+                <td>{{n.aula}}</td>
+                <td>{{n.docente}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>  	
+       </div>
+{% endfor %}
+{% else %}
+   <h1>No tienes asginado ningun horario</h1>
+{% endif %} 
+{% endblock %}

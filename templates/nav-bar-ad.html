@@ -1,0 +1,40 @@
+<header id = "header">
+    <div class="container-fluid" style="background-color: #0080FF;" >
+      <div id="logo" class="pull-left">
+        <h1><a href="/" class="scrollto">Administrador</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+     
+      <nav id="nav-menu-container" >
+        <ul class="nav-menu" >
+          {% if not request.user.is_authenticated %}
+          {% else %}
+              <li class="menu-active">
+                <a class="nav-link" href="{% url 'logout' %}">Cerrar sesion</>
+              </li>
+          {% endif %}
+
+            <li class="menu-has-children">
+               <a  class="nav-link" href=""class="btn btn-primary">Subir Excel</a>
+             <ul>
+              <li><a href="/admin/siscontrol/user/import/">Usuarios</a></li>
+              <li><a href="/admin/siscontrol/horarios/import/">Horarios</a></li>
+              <li><a href="/admin/siscontrol/calificacion/import/">Calificaciones</a></li>
+            </ul>
+            </li>
+            <li class="menu-has-children">
+               <a  class="nav-link" href=""class="btn btn-primary">Usuarios</a>
+             <ul>
+              <li><a href="{% url 'user_list' %}">Lista usuarios</a></li>
+              <li><a href="{% url 'signup' %}">Registrar usuario</a></li>
+              
+            </ul>
+            </li>
+            <li>
+              <a href="">Editar carosuel</a>
+            </li>
+                 
+            </nav><!-- #nav-menu-container -->
+    </div>
+</header>

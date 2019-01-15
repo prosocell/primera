@@ -1,0 +1,34 @@
+{% extends 'siscontrol/base-siscontrol.html' %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+{% block headers %}
+<div class="container" style="width: 100px; height:100px;">
+        <div class="row">
+          <div class="col-lg-auto col-md-auto mx-auto">
+            <div class="site-heading" >
+              {% if request.user.turno == 'Ma' %}
+                {% include 'navbar-alu.html' %} 
+              {% elif request.user.turno == 'Ve' %} 
+                {% include 'navbar-alu.html' %} 
+              {% elif request.user.turno == 'Mi' %}
+                {% include 'navbar-doc.html' %}
+              {% elif request.user.turno == 'Di' %}
+                {% include 'nav-bar-dir.html' %}
+              {% elif request.user.turno == 'Pa' %}
+                {% include 'navbar-doc-extra.html' %}
+              {% else %}
+                {% include 'nav-bar-ad.html' %}
+              {% endif %}      
+              </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}              
+
+{% block content %}
+
+  <h1>Bienvenido {{projects.first_name}}</h1>
+  <center><img src="../static/img/cobach01.jpg" style="width: 500px; height: 300px;" ></center>
+
+{% endblock %}

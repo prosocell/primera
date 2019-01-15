@@ -1,0 +1,49 @@
+{% extends 'siscontrol/base-siscontrol.html' %}
+
+{% block title %}{% endblock %}
+
+{% block background %}{% endblock %}
+
+{% block headers %}
+<br><br><br>
+    
+     {% if request.user.turno == 'Ma' %}
+                {% include 'navbar-alu.html' %} 
+              {% elif request.user.turno == 'Ve' %} 
+                {% include 'navbar-alu.html' %} 
+              {% elif request.user.turno == 'Mi' %}
+                {% include 'navbar-doc.html' %}
+              {% elif request.user.turno == 'Di' %}
+                {% include 'nav-bar-dir.html' %}
+              {% else %}
+                {% include 'nav-bar-ad.html' %}
+              {% endif %} 
+    
+{% endblock %}              
+
+{% block content %}
+{% if comunicado %}
+  {% for c in comunicado %}
+
+<!-- Proyecto -->
+    <div class="row project" >
+        <div class="col-lg-7 col-md-8">
+                
+                <h1>{{c.title}}</h1>
+                <p>{{c.description}}</p> 
+                {% if c.archivo %}
+                <a href="{{c.archivo.url}}">Ver comunicado</a>
+                {% else %}
+                {% endif %}
+        </div>  	
+    </div>
+
+        
+    
+    {% endfor %}
+
+    {% else %}
+    <h1>No ay comunicados</h1>
+     
+    {% endif %}
+{% endblock %}

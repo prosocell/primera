@@ -1,0 +1,305 @@
+{% extends 'base.html' %}
+
+{% block title %}nuevo ingreso traslados revalidados{% endblock %}
+
+{% block background %}{% load static %}{% static '../static/img/' %}{% endblock %}
+
+{% block headers %}
+{% include 'nav-bar.html' %}
+ <div class="container" style="width: 100px; height:100px;"></div>
+{% endblock %}              
+
+{% block content %}
+    <div>
+    <h1> nuevo ingreso traslados revalidados</h1>
+    <h4>registro de alumno</h4>
+    <div>
+    <form role="form" enctype="multipart/form-data" action="" method="POST"><!--AQUI COMIENSA MI FORMULARIO-->
+        {% csrf_token %}
+        <!--1div><img src="../static/img/caru1.jpg"> </div-->
+        <div class="form-group">
+            <h4>
+                <center>DATOS PERSONALES DEL ALUMNO</center>
+            </h4>
+            <div class="col-xs-6 col-sm-6 ">
+                <label>Apellido Paterno*</label>
+                <div class="input-group">
+                <input type="text" name="apellido" class="form-control" placeholder="Escribe tu apellido paterno" maxlength="15" minlength="10" required="" id="ap_pat_nuevo">
+            </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 ">
+            <label>Apellido Materno*</label>
+            <div class="input-group">
+                <input type="text" name="apellido" class="form-control" placeholder="Escribe tu apellido materno" maxlength="15" minlength="10" required="" id="ap_mat_nuevo">
+            </div>
+        </div>
+            <div class="col-xs-6 col-sm-6 ">
+            <label>Nombre *</label>
+            <div class="input-group">
+                <input type="text" name="name" class="form-control" placeholder="Escribe tu nombre" maxlength="20" minlength="10" required="" id="nombres_ingreso">
+            </div>
+        </div>
+
+            <div class="col-xs-6 ">
+            <label  class="col-sm-offset-0  control-label">Fecha de Nacimiento:</label>
+            <input id="date_nac" type="date" name="bday" class="form-control" placeholder="tu fecha de nacimiento" >
+        </div>
+
+            <div id="codeB-form-second-surname" class="form-group">
+                <label class="col-sm-offset-0  control-label">Sexo:</label>
+              
+                    <label class="radio-inline">
+                        <input id="sexo_nuevo" type="radio" name="sexo" value="Masculino" >Masculino
+                    </label>
+                    <label class="radio-inline">
+                        <input id="sexo_nuevo" type="radio" name="sexo" value="Femenino">Femenino
+                    </label>
+                </div>
+            
+ 
+            <div class="col-xs-6 col-sm-6 ">
+            <label>grupo*</label>
+            <div  class="form-group">
+                <input type="text" name="grupo" class="form-control" placeholder="escribe el grupo con MAYUSCULA" maxlength="2" minlength="1" required="" id="grupo_nuevo">
+            </div>
+        </div>
+
+         
+                <div class="col-xs-6 col-sm-6 ">
+                    <label>Domicilio *</label>
+                    <div class="input-group">
+                        <input type="text" name="domicilio" class="form-control" placeholder="Calle, Nª casa, colonia " maxlength="100" minlength="3" required="" id="domicilio_nuevo">
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Clave de curp*</label>
+                <div class="input-group">
+                    <input type="text" name="CURP" class="form-control" placeholder="Escribe tu curp en mayusculas" maxlength="15" minlength="3" required="" id="curp_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Colonia*</label>
+                <div class="input-group">
+                    <input type="text" name="apellido" class="form-control" placeholder="  Escribe la colonia donde vives" maxlength="15" minlength="3" required="" id="colonia_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Municipio*</label>
+                <div class="input-group">
+                    <input type="text" name="Municipio" class="form-control" placeholder="escribe el nombre de tu municipio" maxlength="15" minlength="3" required="" id="municipio_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Estado*</label>
+                <div class="input-group">
+                    <input type="text" name="estado" class="form-control" placeholder="  escribe tu estado" maxlength="15" minlength="3" required="" id="estado_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Codigo postal*</label>
+                <div class="input-group">
+                <input type="number" name="codigo" class="form-control" placeholder="  Escribe tu codigo postal  " maxlength="15" minlength="3" required="" id="cp_nuevo">
+            </div>
+        </div>
+                <div class="form-group">
+                <label>Email *</label>
+                <div class="input-group">
+                    <input type="email" name="email" class="form-control" placeholder="Escribe tu email" maxlength="100" minlength="3" required="" id="correo_nuevo">
+                </div>
+            </div>
+                <h4>
+                    <center>DATOS PERSONALES DEL TUTOR O TUTORES</center>
+                </h4>
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Primer tutor *</label>
+                <div class="input-group">
+                <input type="text" name="tutor" class="form-control" placeholder=" nombre completo" maxlength="20" minlength="3" required="" id="p_tutor_nuevo">
+            </div>
+        </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Domicilio *</label>
+                <div class="input-group">
+                    <input type="text" name="domiciliot" class="form-control" placeholder="Calle, Nª casa " maxlength="100" minlength="3" required="" id="domicilio_pt_nuevo"></div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Colonia*</label>
+                <div class="input-group">
+                    <input type="text" name="coloniat" class="form-control" placeholder="  Escribe la colonia donde vives" maxlength="15" minlength="3" required="" id="colonia_pt_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Municipio*</label>
+                <div class="input-group">
+                    <input type="text" name="Municipiot" class="form-control" placeholder="escribe tu municipio" maxlength="15" minlength="3" required="" id="municipio_pt_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Estado*</label>
+                <div class="input-group">
+                    <input type="text" name="Estadot" class="form-control" placeholder="escribe tu estado" maxlength="15" minlength="3" required="" id="estado_pt_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Codigo postal*</label>
+                <div class="input-group">
+                    <input type="number" name="codigo" class="form-control" placeholder="  Escribe tu codigo postal  " maxlength="15" minlength="3" required="" id="cp_pt_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Telefono de casa *</label>
+                <div class="input-group">
+                <input type="number" name="Telefonot" class="form-control" placeholder=" Solo numero de casa " maxlength="12" minlength="3" required="" id="tel_pt_nuevo">
+            </div>
+        </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Celular del tutor *</label>
+                <div class="input-group">
+                <input type="number" name="celulart" class="form-control" placeholder=" Solo numero celular " maxlength="12" minlength="3" required="" id="cel_pt_nuevo">
+            </div>
+        </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Segundo tutor *</label>
+                <div class="input-group">
+                    <input type="text" name="tutor" class="form-control" placeholder=" nombre completo" maxlength="20" minlength="3" required="" id="s_tutor_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                    <label>Domicilio *</label>
+                    <div class="input-group">
+                        <input type="text" name="domicilios" class="form-control" placeholder="Calle, Nª casa " maxlength="100" minlength="3" required="" id="domicilio_st_nuevo">
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Colonia*</label>
+                <div class="input-group">
+                    <input type="text" name="colonias" class="form-control" placeholder="  Escribe la colonia donde vives" maxlength="30" minlength="3" required="" id="colonia_st_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Municipio*</label>
+                <div class="input-group">
+                    <input type="text" name="Municipios" class="form-control" placeholder="escribe tu municipio" maxlength="20" minlength="3" required="" id="municipio_st_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Estado*</label>
+                <div class="input-group">
+                    <input type="text" name="estados" class="form-control" placeholder="escribe tu municipio" maxlength="20" minlength="3" required="" id="estado_st_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Codigo postal*</label>
+                <div class="input-group">
+                    <input type="number" name="codigos" class="form-control" placeholder="  Escribe tu codigo postal  " maxlength="15" minlength="3" required="" id="cp_st_nuevo">
+                </div>
+            </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Telefono de casa *</label>
+                <div class="input-group">
+                <input type="number" name="Telefonos" class="form-control" placeholder=" Solo numero de casa " maxlength="20" minlength="3" required="" id="tel_st_nuevo">
+            </div>
+        </div>
+                
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Celular del tutor *</label>
+                <div class="input-group">
+                <input type="number" name="celulars" class="form-control" placeholder=" Solo numero celular " maxlength="20" minlength="3" required="" id="cel_st_nuevo">
+            </div>
+        </div>
+                <h4>
+                    <CEnter>DATOS DE LA ESCUELA SECUNDARIA DE PROCEDENCIA </CEnter>
+                </h4>
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Nombre de la secundaria *</label>
+                <div class="input-group">
+                <input type="text" name="secu" class="form-control" placeholder=" Escribe el nombre de tu secundaria" maxlength="50" minlength="3" required="" id="nom_secundaria_nuevo">
+            </div>
+        </div>
+
+                <div class="col-xs-6 col-sm-6 ">
+                <label>Clave de la secundaria *</label>
+                <div class="input-group">
+                    <input type="text" name="clave" class="form-control" placeholder=" Escribe la clave de tu secundaria" maxlength="30" minlength="3" required="" id="clave_secu_nuevo">
+                </div>
+            </div>
+
+
+            <div class="col-xs-6 col-sm-6 ">
+            <label>Promedio *</label>
+            <div class="input-group">
+                <input type="number" name="promedio" class="form-control" placeholder=" Escribe tu promedio  " maxlength="20" minlength="3" required="" id="promedio_nuevo">
+            </div>
+        </div>
+  
+            <div class="col-xs-6 col-sm-6 ">
+            <label>Folio de certificado *</label>
+            <div class="input-group">
+                <input type="text" name="clave" class="form-control" placeholder="solo folio de certificado" maxlength="25" minlength="3" required="" id="folio_cert_nuevo">
+            </div>
+        </div>
+            <div class="col-xs-6 col-sm-6 ">
+            <label >Fecha de expedicion de certificado de secundaria:</label>
+            <input type="date" name="fecha" class="form-control" placeholder="tu fecha de expedicion" max="1984-12-31" min="2025-12-31" id="fech_exped_nuevo">
+        </div>
+
+            <div class="form-group">
+                <label class="col-sm-offset-0 ">Indiaca tipo de secundaria:</label>
+                <div class="col-sm-offset-0 ">
+                    <label class="radio-inline">
+                        <input id="tipo_secu_nuevo" type="radio" name="escuela" value="Estatal" >ESTATAL
+                    </label>
+                    <label class="radio-inline">
+                        <input id="tipo_secu_nuevo" type="radio" name="escuela" value="Federal">FEDERAL
+                    </label>
+                    <label class="radio-inline">
+                        <input id="tipo_secu_nuevo" type="radio" name="escuela" value="Particular">PARTICULAR
+                    </label>
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+            <label >Tuxtla Gutiérrez Chiapas a</label>
+            <input type="number" name="dia" maxlength="2" minlength="1" min="1" max="31" size="20" id="dia_nuevo">
+            <label> del mes </label>
+            <input type="text" name="mes" size="20" maxlength="11 minlength="4" id="mes_nuevo" >
+            <label> del año</label>
+            <input type="number" name="years" size="20"  min="1994" max="2023"  id="ano_nuevo">
+            </div>
+            
+            <div>
+                <p> Acepto cumplir las disposiciones del reglamento general de alumnos del colegio de bachilleres de Chiapas al igual que el reglamento interno del plantel y permanecer en mi turno hasta concluir mi bachillerato</p>
+            </div>
+            <div class="form-group no-bottom">
+                <div class="col-sm-12" >
+                    <div class="controls">
+                         <p><button id="imprimir_nuevo_ingreso"  type="submit" class="save btn btn-default" >Imprimir</button></p>
+                    </div>
+                </div>
+            </div>
+            </form>
+
+            
+       
+{% endblock %}
+

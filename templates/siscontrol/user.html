@@ -1,0 +1,64 @@
+{% extends 'siscontrol/base-siscontrol.html' %}
+
+{% block title %}{% endblock %}
+
+{% block background %}{% endblock %}
+
+{% block headers %}
+<br><br><br>
+  {% include 'nav-bar-ad.html' %}           
+{% endblock %}
+
+{% block content %}
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrapcdnotstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>              
+{% if usuarios %}
+{% for c in usuarios %}
+<!-- Proyecto -->
+    <div class="container" >
+       <div class="row mt-3">
+      <table class="table table-bordered" >
+
+      <div class="col-md-6  mb-3">
+
+        <thead>
+          <tr>
+            <th width="30%">Nombre de usuario: </th> 
+            <th width="30%">nombre:</th>
+            <th width="30%">eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td width="30%">{{c.username}}</td>
+            <td width="30%">{{c.first_name}} {{c.last_name}}</td>
+            <td><a href="/siscontrol/delete_user/{{c.id}}" %}">si</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+    {% endfor %}
+    {% else %}
+    <h1>No ay usuarios</h1>
+    {% endif %}
+<div class="container-fluid" >
+  <br>
+  <nav>
+    <ul class="pagination" >
+      <li class="disabled"><a href="#">&laquo;</a></li>
+      <li class="active"><a href="#">1</a></li>
+      <li href="" ><a href="">2 </a></li>
+      <li href="" ><a href="">3 </a></li>
+      <li href="" ><a href="">4 </a></li>
+      <li href="" ><a href="">5 </a></li>
+      <li><a href="#">&raquo;</a></li>
+    </ul>
+  </nav>
+</div>
+{% endblock %}

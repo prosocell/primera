@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block background %}{% load static %}{% static '../static/img/' %}{% endblock %}
+
+{% block headers %}
+{% include 'nav-bar.html' %}
+    <div class="container" style="width: 100px; height:100px;"></div>
+{% endblock %}              
+
+{% block content %}
+<br><br><br>
+
+	<div >
+		<ul>
+			<a href="{% url 'nuevo' %}">
+				<h3>solicitud de inscripcion de nuevo ingreso, Traslados y reválidados ciclo escolar 2018/B</h3>
+			</a>
+			<a href="{% url 'normal' %} ">
+				<h3>solicitud de reinscripcion, alumnos regulares  2º a 6º semestre ciclo 2018/B</h3>
+			</a>
+			<a href="{% url 'repetidor' %}" >
+				<h3>solicitud de reinscripcion, alumnos repetidores de semestre ciclo 2018/B</h3>
+			</a>
+			<a href="{% url 'cursadores' %}" >
+				<h3>solicitud de reinscripcion, alumnos cursadores de semestre ciclo 2018/B</h3>
+			</a>
+		</ul>   </div> 
+  <p> alumnos de aceptados <a href="http://sistemascobach.cobach.mx/integral/login.aspx">ver lista</a></p>
+    <p>  si tienes alguna duda también puedes <a href="{% url 'contact' %}">contactanos.</a></p>
+ 
+{% endblock %} 

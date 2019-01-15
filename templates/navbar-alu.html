@@ -1,0 +1,43 @@
+<header id = "header">
+ <div class="container-fluid" style="background-color: #0080FF;" >
+  
+        <div id="logo" class="pull-left">
+          <h1><a href="{% url 'control' %}" class="scrollto">Alumno</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+        </div>
+  
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            {% if not request.user.is_authenticated %}
+            <li class="nav-link">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            {% else %}
+
+            <li class="menu-active">
+                <a class="nav-link" href="{% url 'logout' %}">Cerrar sesion</>
+            </li>
+             <li class="menu-active">
+                <a class="nav-link" href="/">Plataforma COBACH 01</>
+            </li>
+          {% endif %}
+      
+            <li><a href="{% url 'infdoc' pk=user.id %}">Datos personales</a></li>
+              <li><a href="{% url 'horario' %}">Horario</a></li>
+            <li><a href="{% url 'comunicadosgeneral' %}">Comunicados</a></li>
+            <li class="nav-menu-children">
+                    <a class="nav-link" href="">Calificaciones</a>
+                    <ul>
+                       <li>
+                          <a href="{% url 'cal_par' %}">Calificaciones parciales</a>
+                        </li>
+                        <li>
+                           <a href="{% url 'calificaciones' %}">Kardex Academico</a>
+                        </li>
+                    </ul>
+            </li>
+
+        </nav><!-- #nav-menu-container -->
+      </div>
+      </header>

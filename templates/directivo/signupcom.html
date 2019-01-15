@@ -1,0 +1,62 @@
+{% extends 'siscontrol/base-siscontrol.html' %}
+
+{% block title %}Subir comunicado{% endblock %}
+{% block background %}{% endblock %}
+{% block headers %} 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+{% endblock %} 
+{% block content %}
+{% include 'nav-bar-dir.html' %}
+<style>.errorlist{color:red;}</style>
+
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+        {% if 'register' in request.GET %}
+        <p style=" color:green;">Usuario registrado correctamente, inicie sesion porfavor</p>
+        {% endif %}
+        <br><br><br>
+        <div class="w3-container w3-flat-clouds">
+        <center><h1>SUBIR COMUNICADOS</h1>
+
+          <form  action="" method="post">{% csrf_token %}
+          <!--{{ form.as_p }}-->
+            <p>
+              <label>Titulo:</label>
+              <input type="text" name="title" required="title" maxlength="200">
+            </p>
+            <p>
+              <label>Descripcion:</label><br>
+              <textarea name="description" required="description" cols="40" rows="10"></textarea>
+            </p>
+            <p>
+              <label>Turno:</label>
+              <select name="turno">
+                <option value selected>-----</option>
+                <option value="Ma">Matutino</option>
+                <option value="Ve">Vespertino</option>
+                <option value="Mi">Docente</option>
+              </select>
+            </p>
+          <p>
+            <label> Archivo:</label>
+            <input type="file" name="archivo">
+          </p>
+
+          <p>
+            <button type="submit" class="btn btn-primary " value="Subir">Subir</button>
+          </p>  
+        </form>
+        
+      </center>
+        
+      </div>
+    </div>
+  </div>
+  </div> 
+</main>
+
+{% endblock %}

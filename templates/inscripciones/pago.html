@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block background %}{% load static %}{% static '../static/img/' %}{% endblock %}
+
+{% block headers %}
+{% include 'nav-bar.html' %}
+ <div class="container" style="width: 100px; height:100px;"></div>
+    
+{% endblock %}              
+
+{% block content %}
+
+<h1>pago en linea</h1>
+<a href="http://sistemascobach.cobach.mx/integral/login.aspx"><h1>Para ir a reinscripciones solo tiene que dar click AQUI:</h1></a> 
+{% endblock %}

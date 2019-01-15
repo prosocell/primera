@@ -1,0 +1,29 @@
+{% extends 'siscontrol/base-siscontrol.html' %}
+
+{% block title %}Subir comunicado{% endblock %}
+{% block background %}{% endblock %}
+{% block headers %} 
+{% endblock %} 
+{% block content %}
+{% include 'nav-bar-dir.html' %}
+<br><br><br>
+<style>.errorlist{color:red;}</style>
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+        {% if 'register' in request.GET %}
+        <p style=" color:green;">Usuario registrado correctamente, inicie sesion porfavor</p>
+        {% endif %}
+        <br><br><br>
+        <form action="" method="post">{% csrf_token %}
+          {{ form.as_p }}
+          
+          <p><button type="submit" class="btn btn-primary btn-block" value="Subir">Subir</button></p>  
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

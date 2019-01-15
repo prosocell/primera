@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block background %}{% load static %}{% static '../static/img/' %}{% endblock %}
+
+{% block headers %}
+{% include "nav-bar.html" %}
+<div class="container" style="width: 400px; height:500px;">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading" >
+              
+     			<h1>Calendario</h1>         
+
+              </div>
+          </div>
+        </div>
+      </div>
+
+     
+    <!-- <span class="subheading">Ingeniero en Sistemas Computacionales</span>-->
+    
+{% endblock %}              
+
+{% block content %}
+
+<span>
+    <img src="../static/img/calendario.jpg" alt="calendario2018" width="846" height="653.42" style="display:block;">
+</span>
+{% endblock %}
+

@@ -1,0 +1,62 @@
+{% extends 'siscontrol/base-siscontrol.html' %}
+
+{% block title %}Portada{% endblock %}
+
+{% block background %}{% endblock %}
+{% block headers %}
+ {% if request.user.turno == 'Ma' %}
+                {% include 'navbar-alu.html' %} 
+              {% elif request.user.turno == 'Ve' %} 
+                {% include 'navbar-alu.html' %} 
+              {% elif request.user.turno == 'Mi' %}
+                {% include 'navbar-doc.html' %}
+              {% elif request.user.turno == 'Di' %}
+                {% include 'nav-bar-dir.html' %}
+              {% elif request.user.turno =='Pa' %}
+                {% include 'navbar-doc-extra' %}
+              {% else %}
+                {% include 'nav-bar-ad.html' %}
+              {% endif %} 
+{% endblock %}  
+
+              <!DOCTYPE html>
+              <html>
+              <head>
+                <style type="text/css">
+                  body{
+                    color:purple;
+                  }
+                </style>
+                
+              </head>
+              
+              
+             
+{% block content %}
+<body>
+<br><br><br>
+<h1>Datos del usuario</h1>
+<table class="table table-bordered" >
+    <thead>
+        <tr>
+          <th>Nombre: </th>
+            <th>Apellidos: </th>
+            <th>Telefono: </th>
+            <th>Email: </th>
+            <th>Sexo: </th>
+          </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>{{projects.first_name}}</td>
+    <td>{{projects.last_name}}</td>
+    <td>{{projects.telefono}}</td>
+    <td>{{projects.email}}</td>
+    <td>{{projects.sexo}}</td>        
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
+
+{% endblock %}

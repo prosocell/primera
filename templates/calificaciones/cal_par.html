@@ -1,0 +1,61 @@
+{% extends 'siscontrol/base-siscontrol.html' %}
+
+{% block title %}{% endblock %}
+
+{% block background %}}{% endblock %}
+
+{% block headers %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+<br>
+    <br>
+        <br> 
+            {% include 'navbar-alu.html' %}
+    
+{% endblock %}              
+
+{% block content %}
+{% if cal %}
+            <!-- Proyecto -->
+    <div class="row project" >
+          <table class="table table-bordered" >
+            <thead>
+              <tr>            
+                <th>Materia</th>
+                <th>Parcial 1</th>
+                <th>Parcial 2</th> 
+                <th>Parcial 3</th>
+                <th>Calificacion final</th>
+                <th>Faltas parcial 1</th>
+                <th>Faltas parcial 2</th>
+                <th>Faltas parcial 3</th>
+                <th>Faltas semestral</th>
+              </tr>       
+            </thead>
+            {% for n in cal %}
+            <tbody>
+              <tr>
+                <td>{{n.materia}}</td>
+                <td>{{n.parcial_1}}</td>
+                <td>{{n.parcial_2}}</td>
+                <td>{{n.parcial_3}}</td>
+                <td>{{n.inasispar1}}</td>
+                <td>{{n.inasispar2}}</td>
+                <td>{{n.inasispar3}}</td>
+                <td>{{n.inasistenc}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>      
+       </div>
+{% endfor %}
+{% else %}
+   <h1>No tienes calificaciones parciales</h1>
+{% endif %}
+            </div>
+          </div>
+        </br>
+    </br>
+</br>
+{% endblock %}

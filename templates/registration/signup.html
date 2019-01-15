@@ -1,0 +1,162 @@
+{% extends 'siscontrol/base-siscontrol.html' %}
+{% block title %}
+  <div class="w3-container w3-flat-peter-river">Registro</div>
+{% endblock %}
+{% block background %}{% endblock %}
+{% block headers %}
+{% endblock %} 
+{% block content %}<br><br><br><br><br>
+{% include 'nav-bar-ad.html' %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+<style>.errorlist{color:black;} </style>
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+        <div class="w3-container w3-flat-clouds">
+          <h1>Registro de  nuevo usuario</h1><table border="0">
+        <form action="" enctype="multipart/form-data" method="POST" role="form" >
+            {% csrf_token %}
+           <!--{{ form.as_p }}-->
+           <center><h2>Datos obligatorios</h2></center>
+           
+             <tr>
+              <td width="50%"><label>Nombre:</label></td>
+             <td width="50%"><input type="text" name="first_name" maxlength="30" Placeholder="Escribe tu nombre "></td>
+           </tr>
+
+        <tr>
+          <td width="50%"><label>Apellidos:</label></td>
+        <td width="50%"><input type="text" name="last_name" maxlength="150"Placeholder="Escribe tu apellido"></td>
+      </tr>
+        <tr>
+          <td width="50%"> <label>Nombre de usuario:</label></td>
+          <td><input type="text" name="username" maxlength="150"Placeholder="nuevo usuario"></td>
+        </tr>
+           <tr>
+            <td width="50%"><label>Contraseña:</label>
+           <td width="50%"><input type="password" name="pasword1" Placeholder="nueva Contraseña"></td>
+         </tr>
+         
+             <tr>
+              <td width="50%"><label>Contrasela(confirmacion):</label></td>
+           <td width="50%"><input type="password" name="password2" Placeholder="repite la Contraseña ">
+           </td>
+         </tr>
+         <tr>
+         <td width="50%"><label>Email:</label></td>
+          <td width="50%"><input type="email" name="email" placeholder="indica tu correo electronico"></td>
+        </tr>
+             
+           <tr>
+              <td width="50%">  
+             <label>Sexo:</label>
+             <select name="sexo">
+               <option value selected>--------</option>
+               <option value="M">Femenino</option>
+               <option value="H">Masculino</option>
+             </select>
+         </td></tr>
+           <tr>
+              <td width="50%">
+                     <label>Turno:</label>
+             <select name="turno">
+               <option value selected>--------</option>
+               <option value="Ma">Matutino</option>
+               <option value="ve">Vespertino</option>
+               <option value="mi">Mixto</option>
+               <option value="di">Director</option>
+               <option value="Pa">Paraescolar</option>
+             </select>
+           </td>
+         </tr>
+
+           <tr>
+              <td width="50%"><center><h2>Datos para registrar alumno:</h2></center></td></tr>
+           
+            <tr>
+            <td width="50%"> <label>Curp:</label></td>
+              <td width="50%"><input type="text" name="curp" Placeholder="Escribe CURP">
+            </td>
+          </tr>
+            
+            <tr>
+              <td width="50%"><label>Matricula:</label></td>
+              <td width="50%"><input type="text" name="matricula"Placeholder="Escribe la Matricula"></td>
+            </tr>
+            
+            <tr>
+              <td width="50%"><label>Grado:</label></td>
+              <td width="50%"><input type="text" name="grado"Placeholder="Escribe el Grado"></td>
+            </tr>
+            <tr>
+              <td width="50%"><label>Grupo:</label></td>
+              <td width="50%"><input type="text" name="grupo"Placeholder="Escribe el Grupo"></td>
+            </tr>
+            
+            <tr>
+              <td width="50%"><center><h2>Datos para registrar  docente</h2></center></td></tr>
+            <tr>
+              <td width="50%"><label>Nombre Plantel:</label></td>
+              <td width="50%"><input type="text" name="nombreplan"Placeholder="Escribe el Nombre del Plantel"></td>
+            </tr>
+            <tr>
+              <td width="50%"><label>Clave Estado:</label></td>
+              <td width="50%"><input type="text" name="claveestadp"Placeholder="clave del estado"></td>
+            </tr>
+            <tr>
+              <td width="50%"><label>Clave Minicipal:</label></td>
+              <td width="50%"><input type="text" name="clavemini"Placeholder="clave del municipio"></td>
+            </tr>
+            <tr>
+              <td width="50%"><label>Clave Centro:</label></td>
+              <td width="50%"><input type="text" name="clacentro"Placeholder="clave centro"></td>
+            </tr>
+            <tr>
+              <td width="50%"><label>Orden:</label></td>
+              <td width="50%"><input type="text" name="orden"Placeholder="no agregar nada"></td>
+            </tr>
+            <tr>
+              <td width="50%"><label>Clave Local:</label></td>
+              <td width="50%"><input type="text" name="clavelocal"Placeholder="Escribe la clave local"></td>
+            </tr>
+            <tr>
+              <td width="50%"><label>Clave del profesor:</label></td>
+              <td width="50%"><input type="text" name="claveprof"Placeholder="indica tu Clave de profesor"></td>
+            </tr>
+            <tr>
+              <td width="50%"><label>Categoria:</label></td>
+              <td width="50%"><input type="text" name="categoria"Placeholder="indica tu Categoria"></td>
+            </tr>
+            <tr>
+              <td width="50%"><label>Telefono:</label></td>
+              <td width="50%"><input type="text" name="telefono"Placeholder="Escribe el nuemro Telefonic"></td>
+            </tr>
+            <tr>
+              <td width="50%"><label>RFC:</label></td>
+              <td width="50%"><input type="text" name="rfc"Placeholder="indica tu RFC"></td>
+            </tr>
+              <tr>
+              <td width="50%"><label>Titulo:</label></td>
+              <td width="50%"><input type="text" name="titulo"Placeholder="Escribe el nombre de tu  Titulo"></td>
+            </tr>
+
+
+            <tr>
+              <td width="50%"><label>RFC:</label></td>
+              <td width="50%"><input type="text" name="rfc"Placeholder="indica tu RFC"></td>
+            </tr>
+            
+       
+            <tr>
+              <td width="50%"><input  type="submit" class="btn btn-success" value="Registrar"></p></td></tr>
+</table>
+      </div>
+    </div>
+  </div>
+  </div>
+</main>
+ </form>
+{% endblock %}

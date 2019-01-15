@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Portada{% endblock %}
+
+{% block background %}{% endblock %}
+
+{% block headers %}
+{% include 'navbar-doc.html' %}
+    {% for projects in projects %}
+    <div class="row project">   
+            <div class="col-lg-10 col-md-8" >
+                <h1 class="section-heading title">Bienvenido: {{projects.nombre}}</h1>
+                
+            </div>
+    </div>
+    
+    {% endfor %}
+    
+{% endblock %}              
+
+{% block content %}
+    
+{% endblock %}

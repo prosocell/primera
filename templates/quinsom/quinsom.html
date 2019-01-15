@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Quienes somos{% endblock %}
+
+{% block background %}{% load static %}{% static '../static/img/enda-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+{% include "nav-bar.html" %}
+ <div class="container" style="width: 400px; height:500px;">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading" >
+              
+          <h1>Bienvenidos</h1>         
+
+              </div>
+          </div>
+        </div>
+      </div>    
+{% endblock %}              
+
+{% block content %}
+
+<span> Inicia sus labores el 22 de agosto de 1978, en las instalaciones de la Escuela de Técnicos en Contabilidad
+        y Administración (ETCA), en ese mismo año se le construyen instalaciones propias ubicadas en el lado poniente
+         de la Ciudad de Tuxtla Gutiérrez, con Domicilio en Av. Cardenal s/n del fraccionamiento Buenos Aires, 
+         ampliación Terán de la Delegación del mismo nombre, comprendiendo:
+
+
+       <li>
+           2 edificios con 6 aulas.
+       </li>
+       <li>
+           1 espacio Administrativo.
+       </li>
+       <li>
+           1 cancha de deportiva.
+        </li>
+        <li>    
+            Servicios sanitarios.
+       </li>
+       <li>       
+            Laboratorios de usos múltiples y Andadores
+       </li>
+    
+   </span>
+
+{% endblock %}
+

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block background %}{% load static %}{% static '../static/img/' %}{% endblock %}
+
+{% block headers %}
+{% include "nav-bar.html" %}
+<div class="container" style="width: 400px; height:500px;">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading" >
+              
+     			<h1>Organigrama</h1>         
+
+              </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}              
+
+{% block content %}
+<img src="../static/img/organigrama.jpg" alt="organigrama" width="1350" height="1200">
+{% endblock %}
+

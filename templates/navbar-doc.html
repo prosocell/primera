@@ -1,0 +1,30 @@
+<header id = "header">
+ <div class="container-fluid" style="background-color: #0080FF;" >
+  
+        <div id="logo" class="pull-left">
+          <h1><a href="/" class="scrollto">Cobach 01</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+        </div>
+  
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            {% if not request.user.is_authenticated %}
+            <li class="nav-link">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            {% else %}
+
+            <li class="menu-active">
+                <a class="nav-link" href="{% url 'logout' %}">Cerrar sesion</>
+            </li>
+          {% endif %}
+      
+          
+            <li><a href="{% url 'infdoc' pk=user.id %}">Datos personales</a></li>
+            <li><a href="{% url 'camb_password' %}">Cambiar contraseña</a></li>
+              <li><a href="{% url 'horario' }">Horario</a></li>
+            <li><a href="{% url 'comunicadosgeneral' %}">Comunicados</a></li>
+        </nav><!-- #nav-menu-container -->
+      </div>
+      </header>

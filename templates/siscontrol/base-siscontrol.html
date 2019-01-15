@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %} Cobach 01</title>
+
+    
+  <!-- Estilos y fuentes del template  -->
+    
+    <link href="{{STATIC_URL}}vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="{{STATIC_URL}}lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}lib/animate/animate.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/clean-blog.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/style.css" rel="stylesheet">
+  </head>
+  <style>
+    
+
+  </style>
+
+  <body style="background-color:#F8FBEF;">
+   
+    <!-- Navegación -->
+
+    <header class="" style="background-image: url('{% block  background %}{% endblock %}') " >
+     <div class="overlay"></div>
+      {% block headers %}{% endblock %}
+      
+    </header>
+    <!-- Contenido-->
+   
+    <div class="container">
+      
+  
+          {% block content %}{% endblock %}
+        </div>
+      </div>  
+    </div>
+    
+    {% if request.path != "siscontrol" %}<hr>{%  endif %}
+    <!-- Pié de página -->
+   
+    
+
+    <!-- Bootstrap y Javascripts -->
+    <script src="{{STATIC_URL}}vendor/jquery/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{STATIC_URL}}js/clean-blog.min.js"></script>
+
+    <!-- JavaScript Libraries -->
+ 
+  <script src="{{STATIC_URL}}lib/jquery/jquery-migrate.min.js"></script>
+  <script src="{{STATIC_URL}}lib/easing/easing.min.js"></script>
+  <script src="{{STATIC_URL}}lib/superfish/hoverIntent.js"></script>
+  <script src="{{STATIC_URL}}lib/superfish/superfish.min.js"></script>
+  <script src="{{STATIC_URL}}lib/wow/wow.min.js"></script>
+  <script src="{{STATIC_URL}}lib/waypoints/waypoints.min.js"></script>
+  <script src="{{STATIC_URL}}lib/counterup/counterup.min.js"></script>
+  <script src="{{STATIC_URL}}lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="{{STATIC_URL}}lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="{{STATIC_URL}}lib/lightbox/js/lightbox.min.js"></script>
+  <script src="{{STATIC_URL}}lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="{{STATIC_URL}}contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{{STATIC_URL}}js/main.js"></script>
+    
+  </body>
+
+</html>

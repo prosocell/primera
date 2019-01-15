@@ -1,0 +1,62 @@
+{% extends 'siscontrol/base-siscontrol.html' %}
+
+{% block title %}Iniciar sesión{% endblock %}
+{% block background %}{% endblock %}
+{% block headers %}
+    {% include 'nav-bar.html' %} 
+    <div class="container" style="width: 100px; height:100px;"></div>
+{% endblock %} 
+{% block content %}<br><br><br><br>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<style>.errorlist{color:red;}</style>
+<div class="w3-container w3-flat-clouds">
+
+    
+  <div class="row">
+    <div class="col-md-9 login-sec">
+        <h2 class="text-center">COBACH 01</h2>
+        <div class="col-md-4" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsuc8TFp8bjolKTPTxP_ml08gyC-E3gCcdVMbbxI915bu05-spMA"></div>
+        <main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+        {% if 'register' in request.GET %}
+        <p style=" color:green;">Usuario registrado correctamente, inicie sesion porfavor</p>
+        {% endif %}
+        <form action="" method="post">
+          {% csrf_token %}
+          <!--{{  form.as_p }}-->
+          
+          {% if form.non_field_errors %}
+            <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+          {% endif %}
+          <p>
+            <input type="text" name="username" autofocus maxlength="254" required
+              id="id_username" class="form-control" placeholder="Nombre de usuario"/>
+          </p>
+          <p>
+            <input type="password" name="password" required
+              id="id_password" class="form-control" placeholder="Contraseña"/>
+          </p>
+          <p><input type="submit" class="btn btn-primary btn-block" value="Acceder"></p>  
+        </form>
+        <p>
+            ¿Ha olvidado su contraseña?, restaurela <a href="">aqui</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</main>
+</div>
+</div>
+
+{% endblock %}

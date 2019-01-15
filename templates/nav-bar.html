@@ -1,0 +1,58 @@
+<header id = "header">
+ <div class="container-fluid">
+  
+        <div id="logo" class="pull-left">
+          <h1><a href="/" class="scrollto">Cobach 01</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+        </div>
+  
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            {% if not request.user.is_authenticated %}
+            <li class="nav-link">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            {% else %}
+
+            <li class="menu-active">
+                <a class="nav-link" href="{% url 'logout' %}">Cerrar sesion</></a>
+            </li>
+            <li class="menu-active">
+                <a class="nav-link" href="siscontrol">Sistema de control</a>
+              </li>
+          {% endif %}
+      
+          <li class="menu-has-children">
+             <a  class="nav-link" href="{% url 'quinsom' %}">Quienes somos</a>
+             <ul>
+              <li><a href="{% url 'proposito' %}">Proposito</a></li>
+              <li><a href="{% url 'organigrama' %}">Organigrama</a></li>
+              <li><a href="{% url 'mivi' %}">Mision Vision</a></li>
+              <li><a href="{% url 'valores' %}">Valores</a></li>
+              <li><a href="{% url 'equidir' %}">Equipo directivo</a></li>
+              <li><a href="{% url 'calendario' %}">Calendario</a></li>
+            </ul>
+          </li>
+          <li class="menu-has-children"  >
+            <a href="{% url 'formato' %}" >Inscripciones</a>
+            <ul>
+              <li><a href="{% url 'formato' %} ">Formato de inscripcion</a></li>
+              <li><a href= "{% url 'comunicadosgeneral' %}">comunicados alumno</a></li>
+              <li><a href=" {% url 'pago' %}">Pago en Linea</a></li>              
+              <li><a href="{% url 'convocatoria' %} ">Convocatoria</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="nav-link" href="">Adminiciones</a>
+          </li>
+          <li>
+            <a class="nav-link" href="">Academico</a>
+          </li>
+          <li>
+            <a class="nav-link" href="{% url 'contact' %}">Contacto</a>
+          </li>
+          </ul>
+        </nav><!-- #nav-menu-container -->
+      </div>
+      </header>

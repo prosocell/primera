@@ -1,0 +1,36 @@
+{% extends 'siscontrol/base-siscontrol.html' %}
+
+{% block title %}Subir comunicado{% endblock %}
+{% block background %}{% endblock %}
+{% block headers %}
+{% endblock %} 
+{% block content %}
+{% include 'nav-bar-dir.html' %}
+
+{% if lista %}
+  {% for c in lista %}
+
+<!-- Proyecto -->
+    <div class="row project" >
+        <div class="col-lg-7 col-md-8">
+          
+                
+                <h1>{{c.title}}</h1>
+                <p>{{c.description}}</p> 
+                <form action="" method="post">{% csrf_token %}
+                    <a href="{{c.archivo.url}}">Ver comunicado</a>
+                    <a href="/siscontrol/edit-comu/{{c.id}}">Editar</a>
+                    <a href="/siscontrol/delete_comu/{{c.id}}">Eliminar</a>
+              </form>
+        </div>    
+    </div>
+    {% endfor %}
+
+    {% else %}
+    <br><br><br>
+    <br><br><br>
+
+    <h1>No ay comunicados</h1>
+     
+    {% endif %}
+{% endblock %}
